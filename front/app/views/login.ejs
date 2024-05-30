@@ -1,0 +1,63 @@
+<html lang="en">
+
+    <%- include("./partials/head.ejs"); %>
+    <!-- login css -->
+    <link rel="stylesheet" href="/css/login.css">
+
+    <body>
+        <%- include("./partials/menu.ejs"); %>
+        <main>
+
+            <div class="contenedor__todo">
+                <div class="caja__trasera">
+                    <div class="caja__trasera-login">
+                        <h3>¿Ya tienes una cuenta?</h3>
+                        <p>Inicia sesión para entrar en la página</p>
+                        <button id="btn__iniciar-sesion">Iniciar Sesión</button>
+                    </div>
+                    <div class="caja__trasera-register">
+                        <h3>¿Aún no tienes una cuenta?</h3>
+                        <p>Regístrate para que puedas iniciar sesión</p>
+                        <button id="btn__registrarse">Regístrarse</button>
+                    </div>
+                </div>
+
+                <!--Formulario de Login y registro-->
+                <div class="contenedor__login-register">
+                    <!--Login-->
+                    <form class="formulario__login" id="login-form">
+                        <h2>Iniciar Sesión</h2>
+                        <input type="text" name="email" placeholder="Correo Electrónico" required>
+                        <input type="password" name="password" placeholder="Contraseña" required>
+                        <button type="submit">Entrar</button>
+                        <div class="error-message" id="error-message"></div>
+                    </form>
+
+                    <!--Register-->
+                    <form class="formulario__register" id="register-form">
+                        <h2>Registrarse</h2>
+                        <input type="number" name="id" placeholder="Identificación" required>
+                        <input type="text" name="names" placeholder="Nombre completo" required>
+                        <input type="text" name="dress" placeholder="Dirección" required>
+                        <input type="number" name="phone" placeholder="Teléfono" required>
+                        <input type="email" name="mail" placeholder="Correo" required>
+                        <input type="password" name="pass" placeholder="Contraseña" required>
+                        <label for="Roles">Rol</label>
+                        <select name="rol" id="Roles" required>
+                            <option value="Usuario">Usuario</option>
+                            <option value="Empresa">Empresa</option>
+                        </select>
+                        <button type="submit">Crear Cuenta</button>
+                        <div class="error-message" id="error-message"></div>
+                    </form>
+                    
+                    <!-- Asegúrate de incluir Toastify en tu HTML -->
+                </div>
+            </div>
+
+        </main>
+        <%- include("./partials/footer.ejs"); %>
+    </body>
+    <script src="/js/login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</html>
